@@ -13,11 +13,12 @@ namespace ConvertFromBaseNToBase10
 		{
 			var nums = Console.ReadLine().Split(' ').ToArray();
 			var baseN = int.Parse(nums[0]);
-			var baseNnum = nums[1];
-			var result = 0.0;
-			for (int i = 0; i < baseNnum.Length; i++)
+			var baseNnum = nums[1].Reverse().ToArray();
+			var result = new BigInteger();
+			for (int power = 0; power < baseNnum.Length; power++)
 			{
-				result += int.Parse(baseNnum[baseNnum.Length - 1 - i].ToString()) * Math.Pow(baseN, i);
+				var currentNum = int.Parse(baseNnum[power].ToString());
+				result += currentNum * BigInteger.Pow(baseN, power);
 			}
 			Console.WriteLine(result);
 		}
