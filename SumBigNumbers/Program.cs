@@ -52,7 +52,7 @@ namespace SumBigNumbers
 				sb.Append(rem);
 			}
 			var result = new string(sb.ToString().Reverse().ToArray());
-			Console.WriteLine(result);
+			Console.WriteLine(result.TrimStart('0'));
 		}
 	}
 }
