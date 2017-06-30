@@ -50,7 +50,7 @@ namespace SumBigNumbers
 				sb.Append(remainder);
 			}
 			var result = new string(sb.ToString().Reverse().ToArray());
-			Console.WriteLine(result);
+			Console.WriteLine(result.TrimStart('0'));
 		}
 	}
 }
